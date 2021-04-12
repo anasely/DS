@@ -95,6 +95,24 @@ void Singlylist::insertion_at_position(){
     }
     std::cout << "\nInserted Successfully !!";
 }
+void Singlylist::insertion_at_end(){
+    struct Node *ptr1, *temp;
+    int item;
+
+    std::cout << "\nEnter value of node: ";
+    std::cin >> item;
+
+    temp = create_list(item);
+    ptr1 = start;
+
+    while(ptr1->next != NULL){
+        ptr1  ptr1->next;
+    }
+    temp->next = NULL;
+    ptr1->next = temp;
+    
+    std::cout << "\nInserted successfully !!";
+}
 int main(){
     Singlylist obj;
     int choice;
