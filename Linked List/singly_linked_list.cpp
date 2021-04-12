@@ -18,7 +18,21 @@ public:
     void deletion_from_position();
     void display();
 };
+Node *Singlylist::create_list(int item){
+    struct Node *ptr;
 
+    ptr = new struct Node;
+    
+    if(ptr == NULL){
+        std::cout << "\nThe memory is not allocated";
+        return 0;
+    }
+    else{
+        ptr->info = item;
+        ptr->next = NULL;
+        return ptr;
+    }
+}
 
 int main(){
     Singlylist obj;
