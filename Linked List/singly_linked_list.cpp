@@ -146,6 +146,20 @@ void Singlylist::deletion_from_position(){
         std::cout << "\nDeleted successfully !!!";
     }
 }
+void Singlylist::display(){
+    struct Node *disp;
+    if(start == NULL){
+        std::cout << "\nEmpty list";
+        return;
+    }
+    disp = start;
+    std::cout << "\nLinked List is: ";
+    while(disp != NULL){
+        std::cout << disp->info << " -> ";
+        disp = disp->next;
+    }
+    std::cout << "NULL";
+}
 int main(){
     Singlylist obj;
     int choice;
