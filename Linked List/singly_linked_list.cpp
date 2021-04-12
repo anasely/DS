@@ -33,7 +33,25 @@ Node *Singlylist::create_list(int item){
         return ptr;
     }
 }
+void Singlylist::inserition_at_beginning(){
+    struct Node *ptr1, *temp;
+    int item;
 
+    std::cout << "\nEnter value of node: ";
+    std::cin >> item;
+
+    temp = create_list(item)
+    if(start == NULL){
+        start = temp;
+        start->next = NULL;
+    }
+    else{
+        ptr1 = start;
+        start = temp;
+        start->next = ptr1;
+    }
+    std::cout << "\nInserted Successfully at beginnig !!";
+}
 int main(){
     Singlylist obj;
     int choice;
