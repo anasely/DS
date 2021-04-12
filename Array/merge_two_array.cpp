@@ -17,6 +17,37 @@ int main(){
         std::cin >> arr2[s];
     
     while(i < m1 && j < m2){
-        
+        if(arr1[i] < arr2[j]){
+            arr3[k] = arr1[i];
+            k++;
+            j++;
+        }
+        else if(arr1[i] > arr2[j]){
+            arr3[k] = arr2[j];
+            j++;
+            k++;
+        }
+        else{
+            arr3[k] = arr1[i];
+            k++;
+            i++;
+            arr3[k] = arr2[j];
+            k++;
+            j++;
+        }
     }
+    while(i < m1){
+        arr3[k] = arr1[i];
+        k++;
+        i++;
+    }
+    while(j < m2){
+        arr3[k] = arr2[j];
+        k++;
+        j++;
+    }
+    std::cout << "\nAfter mergeting new array is: ";
+    for(i = 0; i < (m1+m2); i++)
+        std::cout << "\t" << arr3[i];
+    return 0;
 }
