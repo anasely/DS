@@ -41,6 +41,7 @@ void Singlylist::inserition_at_beginning(){
     std::cin >> item;
 
     temp = create_list(item)
+    
     if(start == NULL){
         start = temp;
         start->next = NULL;
@@ -51,6 +52,48 @@ void Singlylist::inserition_at_beginning(){
         start->next = ptr1;
     }
     std::cout << "\nInserted Successfully at beginnig !!";
+}
+void Singlylist::insertion_at_position(){
+    struct Node *temp, *temp1, *ptr;
+    int item, position, count=0;
+
+    std::cout << "\nEnter value of node: ";
+    std::cin >> item;
+
+    temp = create_list(item);
+    std::cout << "\nEnter posisiotn of node: ";
+    std::cin >> position;
+
+    temp1 = start;
+    while(temp1 != NULL){
+        temp1 = temp1->next;
+        count++;
+    }
+    if(position == 1){
+        if(start == NULL){
+            start = temp;
+            start->next = NULL;
+        }
+        else{
+            ptr = start;
+            start = temp;
+            start->next = ptr;
+        }
+    }
+    else if(position > 1 && position <= count){
+        temp1 = start;
+        for(i = 1; i < position; i++){
+            ptr = temp1;
+            temp1 = temp1->next;
+        }
+        ptr->next = temp;
+        temp->next = temp1;
+    }
+    else{
+        std::cout << "\nInvalid Position";
+        ecit(0);
+    }
+    std::cout << "\nInserted Successfully !!";
 }
 int main(){
     Singlylist obj;
