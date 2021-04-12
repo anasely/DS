@@ -110,8 +110,41 @@ void Singlylist::insertion_at_end(){
     }
     temp->next = NULL;
     ptr1->next = temp;
-    
+
     std::cout << "\nInserted successfully !!";
+}
+void Singlylist::deletion_from_position(){
+    struct Node *ptr, *temp1;
+    int item, position, count=0;
+
+    if(start == NULL){
+        std::cout << "\nThe memory not allocated";
+        return 0;
+    }
+    std::cout << "\nEnter position of node: ";
+    std::cin >> position;
+    temp1 = start;
+    if(position == 1)
+        start = temp1->next;
+    else{
+        while(temp1 != NULL){
+            temp1 = temp1->next;
+            count++;
+        }
+        if(position > 0 && position <= count){
+            temp1 = start;
+            for(i = 1; i < position; i++){
+                ptr = temp1;
+                temp1 = temp1->next;
+            }
+            ptr->next = temp1->next;
+        }
+        else{
+            std::cout << "\nInvalid position";
+        }
+        free(temp1);
+        std::cout << "\nDeleted successfully !!!";
+    }
 }
 int main(){
     Singlylist obj;
