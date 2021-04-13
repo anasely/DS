@@ -34,7 +34,7 @@ void CircularList::create_list(){
     }
     else{
         ptr->next = end->next;
-        end->next = pre;
+        end->next = ptr;
         end = ptr;
     }
     std::cout << "\nList created Successfully!!";
@@ -47,13 +47,30 @@ void CircularList::insert_at_beginning(){
     std::cin >> item;
 
     if(end == NULL){
-        std::cout << "\List is not created";
+        std::cout << "\nList is not created";
         return;
     }
     else{
         ptr = new struct Node;
 
     }
+}
+void CircularList::insert_at_end(){
+    struct Node *temp;
+    int item;
+
+    std::cout << "\nEnter value of node: ";
+    std::cin >> item;
+
+    temp = new struct Node;
+    end = temp;
+    std::cout << "\nInserted Successfully !!";
+
+}
+void CircularList::deletion(){
+    struct Node *ptr, *temp1;
+    
+    
 }
 int main(){
     CircularList obj;

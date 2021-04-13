@@ -40,7 +40,7 @@ void Singlylist::inserition_at_beginning(){
     std::cout << "\nEnter value of node: ";
     std::cin >> item;
 
-    temp = create_list(item)
+    temp = create_list(item);
     
     if(start == NULL){
         start = temp;
@@ -82,6 +82,7 @@ void Singlylist::insertion_at_position(){
     }
     else if(position > 1 && position <= count){
         temp1 = start;
+        int i;
         for(i = 1; i < position; i++){
             ptr = temp1;
             temp1 = temp1->next;
@@ -91,7 +92,7 @@ void Singlylist::insertion_at_position(){
     }
     else{
         std::cout << "\nInvalid Position";
-        ecit(0);
+        exit(0);
     }
     std::cout << "\nInserted Successfully !!";
 }
@@ -116,11 +117,11 @@ void Singlylist::insertion_at_end(){
 }
 void Singlylist::deletion_from_position(){
     struct Node *ptr, *temp1;
-    int item, position, count=0;
+    int item, position, i, count=0;
 
     if(start == NULL){
         std::cout << "\nThe memory not allocated";
-        return 0;
+
     }
     std::cout << "\nEnter position of node: ";
     std::cin >> position;
