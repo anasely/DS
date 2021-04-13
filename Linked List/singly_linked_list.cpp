@@ -105,6 +105,7 @@ void Singlylist::insertion_at_end(){
     temp = create_list(item);
     ptr1 = start;
 
+
     while(ptr1->next != NULL){
         ptr1 = ptr1->next;
     }
@@ -164,36 +165,38 @@ int main(){
     Singlylist obj;
     int choice;
 
-    std::cout << "\n *** MENU ***";
-    std::cout << "\n1. Insertion at beginnig";
-    std::cout << "\2. Insertion at specified position";
-    std::cout << "\n3. Insertion at the end";
-    std::cout << "\n4. Deletion from spec position";
-    std::cout << "\n5. Display";
-    std::cout << "\n6. Exit";
-    std::cin >> choice;
-    switch (choice){
-        case 1:
-            obj.inserition_at_beginning();
-            break;
-        case 2:
-            obj.insertion_at_position();
-            break;
-        case 3:
-            obj.insertion_at_end();
-            break;
-        case 4:
-            obj.deletion_from_position();
-            break;
-        case 5:
-            obj.display();
-            break;
-        case 6:
-            exit(0);
-            break;
-        default:
-            std::cout << "Wrong choice";
-            exit(0);
+    while(1){
+        std::cout << "\n *** MENU ***";
+        std::cout << "\n1. Insertion at beginnig";
+        std::cout << "\2. Insertion at specified position";
+        std::cout << "\n3. Insertion at the end";
+        std::cout << "\n4. Deletion from spec position";
+        std::cout << "\n5. Display";
+        std::cout << "\n6. Exit";
+        std::cin >> choice;
+        switch (choice){
+            case 1:
+                obj.inserition_at_beginning();
+                break;
+            case 2:
+                obj.insertion_at_position();
+                break;
+            case 3:
+                obj.insertion_at_end();
+                break;
+            case 4:
+                obj.deletion_from_position();
+                break;
+            case 5:
+                obj.display();
+                break;
+            case 6:
+                exit(0);
+                break;
+            default:
+                std::cout << "Wrong choice";
+                exit(0);
+        }
     }
     return 0;
 }
