@@ -113,10 +113,15 @@ void CircularList::display(){
     struct Node *disp;
 
     if(end == NULL){
-        std:cout << "\nMemort not allocated";
+        std:cout << "\nEmpty List";
         return;
     }
-    
+    disp = end->next;
+    std::cout << "\nLinked list is: ";
+    while(disp->next != start){
+        std::cout << disp->next;
+    }
+    std::cout << disp->data;
 }
 int main(){
     CircularList obj;
