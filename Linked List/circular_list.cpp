@@ -69,7 +69,53 @@ void CircularList::insert_at_end(){
 }
 void CircularList::deletion(){
     struct Node *ptr, *temp1;
-    
+
+    int i, item;
+    std::cout << "\nEnter value of node to be deleted: ";
+    std::cin >> item;
+    temp1 = end->next;
+
+    if(end->next == end && end->data == item){
+        ptr = end;
+        end = NULL;
+        free(ptr);
+        std::cout << "\nDeleted Successuflly !!";
+        return;
+    }
+    if(temp1->data == item){
+        ptr = temp1;
+        end->next = temp1->next;
+        free(ptr);
+        std::cout << "\nFirst element is deleted successfully !!!!";
+        return;
+    }
+    while(temp1->next != end){
+        if((temp1->next)->data == item){
+            ptr = temp1->next;
+            temp1->next = ptr->next;
+            free(ptr);
+            std::cout << "\nElement Deleted is: " << item;
+            return;
+        }
+        temp1 = temp1->next;
+    }
+    if((temp1->next)->data == item){
+        ptr = temp1->next;
+        temp1->next = end->next;
+        free(ptr);
+        std::cout << "\nDeleted successfully!!";
+        end = temp1;
+        return;
+    }
+    std::cout << "\nDeleting successuflyy!!";
+}
+void CircularList::display(){
+    struct Node *disp;
+
+    if(end == NULL){
+        std:cout << "\nMemort not allocated";
+        return;
+    }
     
 }
 int main(){
