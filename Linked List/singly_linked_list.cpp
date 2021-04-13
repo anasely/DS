@@ -106,7 +106,7 @@ void Singlylist::insertion_at_end(){
     ptr1 = start;
 
     while(ptr1->next != NULL){
-        ptr1  ptr1->next;
+        ptr1 = ptr1->next;
     }
     temp->next = NULL;
     ptr1->next = temp;
