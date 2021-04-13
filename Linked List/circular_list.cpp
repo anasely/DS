@@ -52,23 +52,49 @@ void CircularList::insert_at_beginning(){
     }
     else{
         ptr = new struct Node;
-        
+
     }
 }
 int main(){
     CircularList obj;
     int choice;
 
-    std::cin >> choice;
-    switch(choice){
-        case 1:
-            obj.insert_at_beginning();
-            break;
-        case 2:
-            obj.insert_at_position();
-            break;
-        case 3:
-            obj.insert_at_end();
-            break;
+    while(1){
+        std::cout << "\n **** MENU ****";
+        std::cout << "\n1. Create List";
+        std::cout << "\n2. Insertion at beginnig";
+        std::cout << "\n3. Insertion at spec position";
+        std::cout << "\n4. Insertion at end";
+        std::cout << "\5. Deletion";
+        std::cout << "\n6. Display";
+        std::cout << "\n7. Exit";
+        std::cin >> choice;
+        
+        switch(choice){
+            case 1:
+                obj.create_list();
+                break;
+            case 2:
+                obj.insert_at_beginning();
+                break;
+            case 3:
+                obj.insert_at_position();
+                break;
+            case 4:
+                obj.insert_at_end();
+                break;
+            case 5:
+                obj.deletion();
+                break;
+            case 6:
+                obj.display();
+                break;
+            case 7:
+                exit(0);
+                break;
+            default:
+                std::cout << "Worng Choice";
+                break;
+        }
     }
 }
