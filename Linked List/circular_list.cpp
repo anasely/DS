@@ -52,8 +52,39 @@ void CircularList::insert_at_beginning(){
     }
     else{
         ptr = new struct Node;
-
+        ptr->data = item;
+        ptr->next = end->next;
+        end->next = ptr;
+        std::cout << "\ıInserted Successfully at beginning !!";
     }
+}
+void CircularList::insert_at_position(){
+    struct Node *temp, *temp1;
+    int item, position, i;
+
+    if(end == NULL){
+        std::cout << "List is not empty";
+        return;
+    }
+    std::cout << "\nEnter value of node: ";
+    std::cin >> item;
+    std::cout << "\nEnter position of node: ";
+    std::cin >> position;
+
+    temp1 = end->next;
+    for(i = 0; i < position-1; i++){
+        temp1 = temp1->next;
+        if(temp1 = end->next){
+            std:cout << "Invalid Position";
+            return;
+        }
+    }
+    temp = new struct Node;
+    temp->next = temp1->next;
+    temp->data = item;
+    temp1->next = temp;
+    
+    std::cout << "\nInserted Successfully !!";
 }
 void CircularList::insert_at_end(){
     struct Node *temp;
