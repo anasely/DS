@@ -19,7 +19,9 @@
 # Linked List
 ## Definition :
 ##### A linked list is a linear collection of data elements. These data ele- ments are called nodes, and they point to the next node by means of pointers. A linked list is a data structure which can be used to implement other data structures such as stacks, queues, trees, and so on. A linked list is a sequence of nodes in which each node contains one or more than one data field and a pointer which points to the next node. Also, linked lists are dynamic in nature; that is, memory is allocated as and when required. There is no need to know the exact size or exact number of elements as in the case of arrays. The following is an example of a simple linked list which contains five nodes:
-
+     |5| | ---> |10| | ---> |15| | ---> |20| | ---> |25|null|
+       |                                               |
+     start                                            end
 
 ## Singly Linked List
 
