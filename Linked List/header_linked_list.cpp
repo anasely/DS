@@ -2,70 +2,71 @@
 
 
 struct Node{
-    int info;
+    int data;
     struct Node *next;
-}*start;
+}*start, *header, *end;
 
-class Singlylist{
+class HeaderList{
 public:
-    Singlylist(){
+    HeaderList(){
         start = NULL;
+        header = NULL;
     }
     Node *create_list(int);
-    void inserition_at_beginning();
+    void insertion_at_beginnig();
     void insertion_at_position();
     void insertion_at_end();
     void deletion_from_position();
     void display();
 };
-Node *Singlylist::create_list(int item){
+Node *HeaderList::create_list(int item){
     struct Node *ptr;
 
-    ptr = new struct Node;
-    
+    ptr = struct Node;
+
     if(ptr == NULL){
         std::cout << "\nThe memory is not allocated";
-        return 0;
+        return;
     }
     else{
-        ptr->info = item;
+        ptr->data = item;
         ptr->next = NULL;
         return ptr;
     }
+    std::cout << "\nList is created";
 }
-void Singlylist::inserition_at_beginning(){
-    struct Node *ptr1, *temp;
+void HeaderList::insertion_at_beginnig(){
+    struct Node *ptr, *temp;
     int item;
 
     std::cout << "\nEnter value of node: ";
     std::cin >> item;
 
     temp = create_list(item);
-    
     if(start == NULL){
         start = temp;
         start->next = NULL;
     }
     else{
-        ptr1 = start;
+        ptr = start;
         start = temp;
-        start->next = ptr1;
+        start->next = ptr;
     }
-    std::cout << "\nInserted Successfully at beginnig !!";
+    std::cout << "\nInserted Successfully !!";
 }
-void Singlylist::insertion_at_position(){
+void HeaderList::insertion_at_position(){
     struct Node *temp, *temp1, *ptr;
-    int item, position, count=0;
+    int item, position, count=0, i;
 
     std::cout << "\nEnter value of node: ";
     std::cin >> item;
 
     temp = create_list(item);
-    std::cout << "\nEnter posisiotn of node: ";
-    std::cin >> position;
 
+    std::cout << "\nEnter position of node: ";
+    std::cin >> position;
     temp1 = start;
-    while(temp1 != NULL){
+    while(temp1 != Null){
         temp1 = temp1->next;
         count++;
     }
@@ -73,99 +74,46 @@ void Singlylist::insertion_at_position(){
         if(start == NULL){
             start = temp;
             start->next = NULL;
-        }
-        else{
+        }else{
             ptr = start;
             start = temp;
             start->next = ptr;
         }
-    }
-    else if(position > 1 && position <= count){
+    }else if(position > 1 && position <= count){
         temp1 = start;
-        int i;
-        for(i = 1; i < position; i++){
+        for(i = 0; i < position-1; i++){
             ptr = temp1;
             temp1 = temp1->next;
         }
         ptr->next = temp;
         temp->next = temp1;
-    }
-    else{
+    }else{
         std::cout << "\nInvalid Position";
-        exit(0);
     }
-    std::cout << "\nInserted Successfully !!";
+    std::cout << "\nInserted successfully !!";
 }
-void Singlylist::insertion_at_end(){
-    struct Node *ptr1, *temp;
+void HeaderList::insertion_at_end(){
+    struct Node *temp, *ptr;
     int item;
 
     std::cout << "\nEnter value of node: ";
     std::cin >> item;
 
     temp = create_list(item);
-    ptr1 = start;
-
-
-    while(ptr1->next != NULL){
-        ptr1 = ptr1->next;
+    ptr = start;
+    while(ptr->next != NULL){
+        ptr = ptr->next;
     }
-    temp->next = NULL;
-    ptr1->next = temp;
+    end = temp;
+    end->next = start;
+    ptr->next = end;
 
-    std::cout << "\nInserted successfully !!";
-}
-void Singlylist::deletion_from_position(){
-    struct Node *ptr, *temp1;
-    int item, position, i, count=0;
-
-    if(start == NULL){
-        std::cout << "\nThe memory not allocated";
-
-    }
-    std::cout << "\nEnter position of node: ";
-    std::cin >> position;
-    temp1 = start;
-    if(position == 1)
-        start = temp1->next;
-    else{
-        while(temp1 != NULL){
-            temp1 = temp1->next;
-            count++;
-        }
-        if(position > 0 && position <= count){
-            temp1 = start;
-            for(i = 1; i < position; i++){
-                ptr = temp1;
-                temp1 = temp1->next;
-            }
-            ptr->next = temp1->next;
-        }
-        else{
-            std::cout << "\nInvalid position";
-        }
-        free(temp1);
-        std::cout << "\nDeleted successfully !!!";
-    }
-}
-void Singlylist::display(){
-    struct Node *disp;
-    if(start == NULL){
-        std::cout << "\nEmpty list";
-        return;
-    }
-    disp = start;
-    std::cout << "\nLinked List is: ";
-    while(disp != NULL){
-        std::cout << disp->info << " -> ";
-        disp = disp->next;
-    }
-    std::cout << "NULL";
+    std::cout << "\nInserted successfully at end !!";
 }
 int main(){
-    Singlylist obj;
+    HeaderList obj;
     int choice;
-
+    
     while(1){
         std::cout << "\n *** MENU ***";
         std::cout << "\n1. Create list";
@@ -175,13 +123,13 @@ int main(){
         std::cout << "\n5. Deletion from spec position";
         std::cout << "\n6. Display";
         std::cout << "\n7. Exit";
-        std::cin >> choice;
-        switch (choice){
+
+        switch(choice){
             case 1:
                 obj.create_list();
                 break;
             case 2:
-                obj.inserition_at_beginning();
+                obj.insertion_at_beginnig();
                 break;
             case 3:
                 obj.insertion_at_position();
@@ -199,9 +147,9 @@ int main(){
                 exit(0);
                 break;
             default:
-                std::cout << "Wrong choice";
+                std::cout << "\nWrong chocie";
                 exit(0);
         }
     }
-    return 0;
+    return 0:
 }
