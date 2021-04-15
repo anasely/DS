@@ -40,3 +40,8 @@
 
 
 
+# Queue
+##### A queue is a linear collection of data elements in which the element inserted first will be the element taken out first (i.e., a queue is a FIFO data structure). A queue is an abstract data structure, somewhat similar to stacks. Unlike stacks, a queue is open on both ends. A queue is a linear data structure in which the first element is inserted on one end called the REAR end (also called the tail end), and the deletion of the element takes place from the other end called the FRONT end (also called the head). One end is always used to insert data and the other end is used to remove data
+## Implementation od a Queue
+- Implementation of Queues using arrays
+    Queues can be easily implemented using arrays. Initially the front end (head) and the rear end (tail) of the queue point at the first position or loca- tion of the array. As we insert new elements into the queue, the rear keeps on incrementing, always pointing to the position where the next element will be inserted, while the front remains at the first position
