@@ -110,6 +110,65 @@ void HeaderList::insertion_at_end(){
 
     std::cout << "\nInserted successfully at end !!";
 }
+void HeaderList::deletion_from_position(){
+    struct Node *ptr, *temp1;
+    int item, position, count=0;
+
+    if(start == NULL){
+        std::cout << "\nEmpty List";
+        return;
+    }
+    std::cout << "\nEnter position of node: ";
+    std::cin >> position;
+
+    temp1 = start;
+    if(position == 1){
+        start = temp1->next;
+    }
+    else{
+        while(temp1 != NULL){
+            temp1 = temp1->next;
+            count++;
+        }
+        if(position > 1 && position <= count){
+            temp1 = start;
+            for(i = 0; i < position-1; i++){
+                ptr = temp1;
+                temp1 = temp1->next;
+            }
+            ptr->next = temp1->next;
+        }else{
+            std::cout << "\nInvalid position";
+        }
+        free(temp1);
+        std::cout << "\nDeleted successfully !!";
+    }
+}
+void HeaderList::display(){
+    struct Node *disp, *temp;
+    int c, count=0;
+
+    if(start == NULL){
+        std::cout << "\nEmpty List";
+        return;
+    }
+    temp = start;
+    while(temp->next != NULL){
+        count++;
+        temp = temp->next;
+    }
+    c = count;
+    if(header == NULL){
+        header->data = c;
+        header->next = start;
+    }
+    disp = start;
+    std::cout << "\nLinked List is: ";
+    while(disp->next != start){
+        std::cout << disp->data << " -> ";
+        disp = disp->next;
+    }
+}
 int main(){
     HeaderList obj;
     int choice;
