@@ -6,11 +6,12 @@ struct Node{
     struct Node *next;
 }*start, *header, *end;
 
-class HeaderList{
+class CircHeadList{
 public:
-    HeaderList(){
+    CircHeadList(){
         start = NULL;
         header = NULL;
+        end = NULL;
     }
     Node *create_list(int);
     void insertion_at_beginnig();
@@ -19,7 +20,7 @@ public:
     void deletion_from_position();
     void display();
 };
-Node *HeaderList::create_list(int item){
+Node *CircHeadList::create_list(int item){
     struct Node *ptr;
 
     ptr = struct Node;
@@ -35,7 +36,7 @@ Node *HeaderList::create_list(int item){
     }
     std::cout << "\nList is created";
 }
-void HeaderList::insertion_at_beginnig(){
+void CircHeadList::insertion_at_beginnig(){
     struct Node *ptr, *temp;
     int item;
 
@@ -54,7 +55,7 @@ void HeaderList::insertion_at_beginnig(){
     }
     std::cout << "\nInserted Successfully !!";
 }
-void HeaderList::insertion_at_position(){
+void CircHeadList::insertion_at_position(){
     struct Node *temp, *temp1, *ptr;
     int item, position, count=0, i;
 
@@ -92,39 +93,21 @@ void HeaderList::insertion_at_position(){
     }
     std::cout << "\nInserted successfully !!";
 }
-void HeaderList::insertion_at_end(){
-    struct Node *temp, *ptr;
-    int item;
-
-    std::cout << "\nEnter value of node: ";
-    std::cin >> item;
-
-    temp = create_list(item);
-    ptr = start;
-    while(ptr->next != NULL){
-        ptr = ptr->next;
-    }
-    temp->next = NULL;
-    ptr->next = temp;
-
-    std::cout << "\nInserted successfully at end !!";
-}
-void HeaderList::deletion_from_position(){
+void CircHeadList::deletion_from_position(){
     struct Node *ptr, *temp1;
-    int item, position, count=0;
+    int i, position , count=0;
 
     if(start == NULL){
         std::cout << "\nEmpty List";
         return;
     }
-    std::cout << "\nEnter position of node: ";
-    std::cin >> position;
-
+    std::cout << "\nEnter value of node: ";
+    std::cin >> item;
     temp1 = start;
+    
     if(position == 1){
         start = temp1->next;
-    }
-    else{
+    }else{
         while(temp1 != NULL){
             temp1 = temp1->next;
             count++;
@@ -143,36 +126,51 @@ void HeaderList::deletion_from_position(){
         std::cout << "\nDeleted successfully !!";
     }
 }
-void HeaderList::display(){
+void CircHeadList::insertion_at_end(){
+    struct Node *temp, *ptr;
+    int item;
+
+    std::cout << "\nEnter value of node: ";
+    std::cin >> item;
+
+    temp = create_list(item);
+    ptr = start;
+    
+    while(ptr->next != NULL){
+        ptr = ptr->next;
+    }
+    end = temp;
+    end->next = start;
+    ptr->next = end;
+    std::cout << "\nInserted successfullly at end !!";
+}
+void CircHeadList::display(){
     struct Node *disp, *temp;
-    int total, count=0;
+    int c, count=0;
 
     if(start == NULL){
         std::cout << "\nEmpty List";
         return;
     }
     temp = start;
-    while(temp != NULL){
+    while(temp->next != NULL){
         count++;
         temp = temp->next;
     }
-    total = count;
+    c = count;
     if(header == NULL){
-        header->data = total;
+        header->data = c;
         header->next = start;
     }
     disp = start;
-    std::cout << "\nLinked list is: ";
-    std::cout << header->data << " -> ";
-
-    while(disp != NULL){
+    std::cout << "\nLinked List is :";
+    while(disp->next != NULL){
         std::cout << disp->data << " -> ";
         disp = disp->next;
     }
-    std::cout << "\nNull";
 }
 int main(){
-    HeaderList obj;
+    CircHeadList obj;
     int choice;
     
     while(1){
