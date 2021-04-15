@@ -7,7 +7,13 @@
     <img src="/Users/anas/Desktop/DS/img1.png" alt="Insert"/>
 
 - Insertion at a specified position.
+    - In this case, a new node is inserted after a given node in a linked list. As in the other cases, we will again check the overflow condition. If the mem- ory for the new node is available, it will be allocated; otherwise, an overflow message is printed. Then a PTR variable is made which will initially point to START, and the PTR variable is used to traverse the linked list until it reaches the value/node after which the new node is to be inserted. When it reaches that node/value, then the NEXT part of that node will store the address of the new node and the NEXT part of the NEW NODE will store the address of its next node in the linked list
+
+    <img src="/Users/anas/Desktop/DS/link_pos.png">
 - Insertion at the end.
+    - To insert the new node at the end of the linked list, we will first check the overflow condition, which is whether the memory is available for a new node. If the memory is not available, then an overflow message is displayed; otherwise, the memory is allocated for the new node. Then a PTR variable is made which will initially point to START and will be used to traverse the linked list until it reaches the last node. When it reaches the last node, the NEXT part of the last node will store the address of the new node, and the NEXT part of the NEW NODE will contain NULL, which will denote the end of the linked list
+
+    <img src="/Users/anas/Desktop/DS/link_end.png">
 
 
 # Linked List
