@@ -182,6 +182,7 @@ int main(){
         std::cout << "\n5. Deletion from spec position";
         std::cout << "\n6. Display";
         std::cout << "\n7. Exit";
+        std::cin >> choice;
 
         switch(choice){
             case 1:
