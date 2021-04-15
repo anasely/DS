@@ -14,7 +14,7 @@
 ## Applications of linked list 
 ##### Consider a polynomial 10x2 + 6x + 9. In this polynomial, every indi- vidual term consists of two parts: first, a coefficient, and second, a power. Here, the coefficients of the expression are 10, 6, and 9, and 2, 1, and 0 are the respective powers of the coefficients. Now, every individual term can be represented using a node of the linked list. The following figure shows how a polynomial expression can be represented using a linked list
 
-    - |10|2| | ----->  |6|1| | ----> |9|0|x| 
+    - |10|2| | ----->  |6|1| | ----> |9|0|x|  ( 10 is Exponent and 2 is Power)
 
 
 
