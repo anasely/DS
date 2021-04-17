@@ -37,6 +37,10 @@
     - 3) The third part is called the next pointer, which contains the address of the succeeding node in the list.
 
 ## Header Linked List
+- Header linked lists are a special type of linked list which always contain a special node, called the header node, at the beginning. This header node usually contains vital information about the linked list, like the total number of nodes in the list, whether the list is sorted or not, and so on. There are two types of header linked lists, which include
+    - 1) Grounded Header Linked List – This linked list stores a unique value NULL in the address field (next part) of the last node of the list.
+    - Circular Header Linked List – This linked list stores the address of
+    the header node in the address field (next part) of the last node of the list.
 
 ## Applications of linked list 
 ##### Consider a polynomial 10x2 + 6x + 9. In this polynomial, every indi- vidual term consists of two parts: first, a coefficient, and second, a power. Here, the coefficients of the expression are 10, 6, and 9, and 2, 1, and 0 are the respective powers of the coefficients. Now, every individual term can be represented using a node of the linked list. The following figure shows how a polynomial expression can be represented using a linked list
