@@ -21,7 +21,7 @@ void interpolationsearch::display(){
     low = 0, high = n-1;
 
     while(low <= high){
-        mid = low((value-arr[low])*(high-low))/(arr[high]-arr[low]);
+        mid = low+((value-arr[low])*(high-low))/(arr[high]-arr[low]);
 
         if(arr[mid] == value){
             std::cout << "\n" << value << ' found in the array';
