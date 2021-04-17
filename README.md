@@ -24,11 +24,17 @@
      start                                            end
 
 ## Singly Linked List
+- A singly linked list is the simplest type of linked list in which each node contains some information/data and only one pointer which points to the next node in the linked list. The traversal of data elements in a singly linked list can be done only in one way
 
 
 ## Circular Linked List
+- Circular linked lists are a type of singly linked list in which the address part of the last node will store the address of the first node, unlike in singly linked lists in which the address part of the last node stores a unique value, NULL. While traversing a circular linked list we can begin from any node and we traverse the list in any direction, be- cause a circular linked list does not have a first or last node. The memory declarations for representing a circular linked list are the same as for a linear linked list
 
 ## Doubly Linked List
+-A doubly linked list is also called a two-way linked list; it is a special type of linked list which can point to the next node as well as the previous node in the sequence. In a doubly linked list each node is divided into three parts
+    - 1) The first part is called the previous pointer, which contains the address of the previous node in the list.
+    - 2) The second part is called the information part, which contains the infor- mation of the node.
+    - 3) The third part is called the next pointer, which contains the address of the succeeding node in the list.
 
 ## Header Linked List
 
